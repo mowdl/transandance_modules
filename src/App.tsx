@@ -71,7 +71,10 @@ function App() {
         {/* All Modules List */}
         <div className="mb-4 p-2 bg-white rounded-lg shadow">
           <div className="flex justify-between items-center mb-2">
-            <h2 className="text-lg font-semibold">All Modules</h2>
+            <div className="text-lg font-semibold flex items-center gap-2 px-2 py-1">
+              <span>All Modules</span>
+              <span className="text-sm text-gray-500">({allModules.length})</span>
+            </div>
             {selectedModules.length > 0 && (
               <div className="flex gap-2">
                 <button
