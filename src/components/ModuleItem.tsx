@@ -9,7 +9,7 @@ interface ModuleItemProps {
 }
 
 const ModuleItem: React.FC<ModuleItemProps> = ({ type, title, children, isSelected = false, onToggle }) => {
-    const badgeClass = type === 'Major' ? 'badge-major' : 'badge-minor';
+    const badgeClass = type === 'Major' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800';
     const selectedClass = isSelected ? 'bg-blue-50 border-blue-200' : '';
 
     return (
@@ -24,7 +24,7 @@ const ModuleItem: React.FC<ModuleItemProps> = ({ type, title, children, isSelect
                     }}
                     className="checkbox checkbox-sm"
                 />
-                <span className={`badge ${badgeClass}`}>{type}</span> 
+                <span className={`text-xs px-1.5 py-0.5 rounded ${badgeClass}`}>{type}</span> 
                 <span className="font-medium">{title}</span>
             </summary>
             <div className="mt-2 pl-6">

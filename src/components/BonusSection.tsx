@@ -2,7 +2,7 @@ import React from 'react';
 
 const BonusSection: React.FC = () => {
     return (
-        <section id="bonus" className="bg-yellow-50 border border-yellow-200">
+        <section className="bg-yellow-50 border border-yellow-200 p-2">
             <h2 className="text-2xl font-semibold mb-4 text-yellow-800">III. Bonus Part</h2>
             <ul className="list-disc pl-5 mb-4 text-yellow-700">
                 <li>Bonus points awarded for additional modules beyond the required 7 Major ones.</li>
