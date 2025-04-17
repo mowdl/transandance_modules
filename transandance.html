@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ft_transcendence Project Outline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for module badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2em 0.6em;
+            font-size: 0.75em; /* 12px */
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.375rem; /* rounded-md */
+            margin-right: 0.5rem; /* Add space between badge and title */
+            flex-shrink: 0; /* Prevent badge from shrinking */
+        }
+        .badge-major {
+            color: #ffffff;
+            background-color: #dc2626; /* red-600 */
+        }
+        .badge-minor {
+            color: #ffffff;
+            background-color: #2563eb; /* blue-600 */
+        }
+        /* Style for code elements */
+        code {
+            background-color: #f3f4f6; /* gray-100 */
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 0.25rem; /* rounded-sm */
+            font-family: monospace;
+        }
+        /* Add some spacing between list items */
+        ul li {
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+        /* Section styling */
+        section {
+            margin-bottom: 2rem; /* mb-8 */
+            padding: 1.5rem; /* p-6 */
+            background-color: #ffffff; /* bg-white */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+        }
+        h2 {
+            border-bottom: 2px solid #e5e7eb; /* border-gray-200 */
+            padding-bottom: 0.5rem; /* pb-2 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        h3 {
+            margin-top: 1rem; /* mt-4 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+        /* Styling for details/summary accordion */
+        details {
+            margin-bottom: 0.5rem; /* Add space between accordion items */
+            border-radius: 0.375rem; /* rounded-md */
+            border: 1px solid #e5e7eb; /* border-gray-200 */
+            overflow: hidden; /* Prevent content overflow */
+        }
+        summary {
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            cursor: pointer;
+            font-weight: 500; /* font-medium */
+            list-style: none; /* Remove default marker */
+            display: flex;
+            align-items: center;
+            background-color: #f9fafb; /* gray-50 */
+            transition: background-color 0.2s ease-in-out;
+        }
+        summary::-webkit-details-marker {
+            display: none; /* Hide default marker in Webkit */
+        }
+        summary:hover {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        /* Add a simple arrow indicator */
+        summary::before {
+            content: '▶';
+            margin-right: 0.5rem; /* mr-2 */
+            font-size: 0.6em;
+            transition: transform 0.2s ease-in-out;
+            display: inline-block;
+            flex-shrink: 0; /* Prevent arrow from shrinking */
+        }
+        details[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        /* Style for the revealed content */
+        details > div {
+            padding: 0.75rem 1rem 1rem 2.5rem; /* py-3 px-4 pb-4 pl-10 (indent content) */
+            border-top: 1px solid #e5e7eb; /* border-gray-200 */
+            background-color: #ffffff; /* bg-white */
+        }
+        /* Ensure nested lists inside dropdowns have proper styling */
+         details > div ul {
+            margin-top: 0.5rem;
+            list-style-type: disc;
+            padding-left: 1.25rem; /* pl-5 */
+         }
+         details > div ul li {
+             margin-bottom: 0.25rem; /* mb-1 */
+         }
+
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto px-4 py-8">
+
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-900">ft_transcendence Project Outline</h1>
+            <p class="text-gray-600">Version 16.0 Summary</p>
+        </header>
+
+        <main>
+            <section id="mandatory">
+                <h2 class="text-2xl font-semibold mb-4">I. Mandatory Part</h2>
+                <p class="mb-4 text-gray-600">Minimum requirements for the project website.</p>
+                <h3 class="text-xl font-semibold">A. Overview</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Create a website for the Pong contest.</li>
+                    <li>Must offer a nice user interface.</li>
+                    <li>Must include real-time multiplayer capabilities for Pong.</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold">B. Minimal Technical Requirements</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li><strong>Backend:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Optional.</li>
+                            <li>If included, must be pure PHP without frameworks <span class="text-sm text-gray-500">(can be overridden by the Framework module)</span>.</li>
+                            <li>If a database is used, must follow the Database module constraints (<code>SQLite</code>).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Frontend:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Must use <code>Typescript</code> as the base code <span class="text-sm text-gray-500">(can be modified by the FrontEnd module - Tailwind CSS + Typescript)</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Website Architecture:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Must be a Single-Page Application (SPA).</li>
+                            <li>Browser's Back and Forward buttons must function correctly.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Compatibility:</strong> Must be compatible with the latest stable version of Mozilla Firefox.</li>
+                    <li><strong>Error Handling:</strong> No unhandled errors or warnings when browsing the website.</li>
+                    <li><strong>Deployment:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Must use Docker.</li>
+                            <li>Everything must launch with a single command line (e.g., <code>docker run ...</code> or <code>docker-compose up</code>).</li>
+                            <li>Be aware of potential rootless Docker constraints on campus computers (runtime location, bind-mounts).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold">C. Game (Pong)</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li><strong>Core Gameplay:</strong> Live Pong game against another player on the same keyboard <span class="text-sm text-gray-500">(can be enhanced with the "Remote players" module)</span>.</li>
+                    <li><strong>Tournament System:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Must support multiple players.</li>
+                            <li>Must clearly display who is playing whom and the order of play.</li>
+                            <li>Requires a matchmaking system to organize participants and announce matches.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Registration:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Basic registration system required: players input an alias at the start of a tournament.</li>
+                            <li>Aliases reset when a new tournament begins.</li>
+                            <li><span class="text-sm text-gray-500">(Can be modified/replaced by the "Standard User Management" module)</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fairness:</strong> All players (including AI, if implemented) must have identical paddle speeds.</li>
+                    <li><strong>Implementation:</strong>
+                        <ul class="list-circle pl-5 mt-1">
+                            <li>Must adhere to default frontend constraints (<code>Typescript</code>) OR use the FrontEnd module (<code>Tailwind CSS</code> + <code>Typescript</code>) OR the Graphics module (<code>Babylon.js</code>).</li>
+                            <li>Must capture the essence of the original Pong (1972), though visual aesthetics can vary.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold">D. Security Concerns</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li><strong>Password Storage:</strong> Any stored passwords must be hashed.</li>
+                    <li><strong>Vulnerabilities:</strong> Must be protected against SQL injections and XSS attacks.</li>
+                    <li><strong>Encryption:</strong> HTTPS connection is mandatory for all aspects if a backend or other features requiring secure connections are used (e.g., use <code>wss</code> instead of <code>ws</code>).</li>
+                    <li><strong>Input Validation:</strong> Must implement validation for forms and any user input (client-side if no backend, server-side if backend exists).</li>
+                    <li><strong>General Security:</strong> Prioritize website security (e.g., protecting API routes) even if not implementing the JWT/2FA module.</li>
+                    <li><strong>Credentials:</strong> No credentials, API keys, etc., should be stored in the git repository (use <code>.env</code> files).</li>
+                </ul>
+            </section>
+
+            <section id="modules">
+                <h2 class="text-2xl font-semibold mb-4">II. Modules</h2>
+                <p class="mb-4 text-gray-600">A minimum of <strong>7 Major Modules</strong> is required for 100% completion. <br><span class="text-sm">(Note: 2 Minor Modules count as 1 Major Module)</span>.</p>
+
+                <h3 class="text-xl font-semibold">A. Web</h3>
+                <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Use Fastify with Node.js for the Backend
+                        </summary>
+                        <div>Use <strong>Fastify with Node.js</strong>. (Overrides default PHP requirement if backend is used).</div>
+                    </details>
+                    <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Use Tailwind CSS with Typescript for the Frontend
+                        </summary>
+                        <div>Use <strong>Tailwind CSS</strong> in addition to Typescript. (Overrides default frontend constraints).</div>
+                    </details>
+                    <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Use SQLite for the Database
+                        </summary>
+                        <div>Use <strong>SQLite</strong> for all DB instances. (May be prerequisite for other modules like Backend Framework).</div>
+                    </details>
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Store Scores on Avalanche Blockchain using Solidity
+                        </summary>
+                        <div>Implement secure storage of tournament scores on a testing blockchain (<strong>Avalanche</strong>) using <strong>Solidity</strong> smart contracts. Requires integration with the website for recording, managing, and retrieving scores. May require backend adjustments.</div>
+                    </details>
+                </div>
+
+                <h3 class="text-xl font-semibold">B. User Management</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement Standard User Management (Auth, Profile, Friends, History)
+                        </summary>
+                        <div>Implement secure user subscription, login, unique display names, profile updates (info, avatar with default), friends list with status, profile stats (wins/losses), and match history (1v1, dates, details). Handle duplicate usernames/emails logically. (Replaces basic alias registration).</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement Remote Authentication with Google Sign-in
+                        </summary>
+                        <div>Integrate <strong>Google Sign-in</strong>. Obtain necessary credentials, implement user-friendly and secure login/authorization flows, and ensure secure token/info exchange. Handle potential duplicate usernames/emails logically.</div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">C. Gameplay and User Experience</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Enable Remote Multiplayer Pong
+                        </summary>
+                        <div>Allow two players on separate computers to play the same Pong game via the website. Handle network issues (disconnections, lag) gracefully for the best user experience. (Enhances mandatory same-keyboard play).</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Enable Multiplayer Pong (>2 Players)
+                        </summary>
+                        <div>Support more than two players (e.g., 3, 4, 5, 6+) in a single game. Requires live control (Remote Players module recommended). Define game rules/board for the chosen number of players (e.g., 4 players on a square board).</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Add Another Game with History & Matchmaking
+                        </summary>
+                        <div>Develop a new game distinct from Pong. Include user history tracking (gameplay stats) and a matchmaking system for the new game. Ensure secure storage and optimize performance.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Add Game Customization Options (Power-ups, Maps)
+                        </summary>
+                        <div>Provide customization options (e.g., power-ups, attacks, maps) applicable to all available games. Allow users to choose a default/basic version. Implement user-friendly settings and maintain consistency across games.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement Live Chat (DMs, Blocks, Invites)
+                        </summary>
+                        <div>Create a chat feature allowing:
+                            <ul>
+                                <li>Sending direct messages to other users.</li>
+                                <li>Blocking other users (hides their messages).</li>
+                                <li>Inviting users to play Pong via chat.</li>
+                                <li>Tournament system notifications for next games.</li>
+                                <li>Accessing player profiles via chat.</li>
+                            </ul>
+                        </div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">D. AI-Algo</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Introduce a Challenging AI Opponent (No A*)
+                        </summary>
+                        <div>Develop a challenging AI opponent for Pong. AI must simulate human keyboard input (refreshing view only once per second, requiring anticipation). AI must use power-ups if the Customization module is implemented. **A\* algorithm is NOT permitted.** Explain AI logic during evaluation; AI must be capable of winning.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Create User and Game Stats Dashboards
+                        </summary>
+                        <div>Create dashboards displaying individual user stats and game session details (outcomes, historical data). Use data visualization (charts, graphs). Allow users to explore their history/performance. Include any useful metrics.</div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">E. Cybersecurity</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement WAF/ModSecurity & HashiCorp Vault
+                        </summary>
+                        <div>Configure and deploy a Web Application Firewall (WAF) and ModSecurity with a hardened configuration. Integrate HashiCorp Vault for secure management of secrets (API keys, credentials, env vars).</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Implement GDPR Compliance Options (Anonymization, Deletion)
+                        </summary>
+                        <div>Implement features allowing users to: request anonymization of personal data, manage local data (view/edit/delete), and request permanent account/data deletion. Provide clear communication and options. Familiarize with GDPR principles.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement 2FA and JWT Security
+                        </summary>
+                        <div>Implement 2FA (e.g., SMS, authenticator app, email codes) as a secondary verification layer. Utilize JSON Web Tokens (JWT) for secure authentication, authorization, and session management. Ensure secure token handling and user-friendly 2FA setup.</div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">F. Devops</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Set up ELK Stack for Log Management
+                        </summary>
+                        <div>Set up the <strong>ELK Stack (Elasticsearch, Logstash, Kibana)</strong> for log management. Configure Elasticsearch for storage/indexing, Logstash for collection/processing, and Kibana for visualization/dashboards. Define retention policies and secure access.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Set up Prometheus & Grafana Monitoring
+                        </summary>
+                        <div>Set up <strong>Prometheus</strong> for metrics collection/alerting and <strong>Grafana</strong> for visualization. Configure data exporters, create custom dashboards, set up alerting rules, manage data retention, and secure Grafana access.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Design Backend as Microservices
+                        </summary>
+                        <div>Architect the backend using microservices. Divide into loosely-coupled services with clear boundaries/interfaces. Implement inter-service communication (e.g., REST APIs, message queues). Each service should handle a specific function for maintainability and scalability.</div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">G. Graphics</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement Advanced 3D Pong with Babylon.js
+                        </summary>
+                        <div>Enhance Pong's visuals using advanced 3D techniques with <strong>Babylon.js</strong> to create an immersive experience. (Overrides default/Frontend module implementation for Pong).</div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">H. Accessibility</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Ensure Responsive Support on All Devices
+                        </summary>
+                        <div>Ensure the website is responsive (adapts to different screen sizes/orientations) and works with various input methods (touch, keyboard, mouse) for a consistent experience across desktops, laptops, tablets, and smartphones.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Expand Browser Compatibility
+                        </summary>
+                        <div>Add support for one additional web browser beyond the mandatory latest stable Firefox. Conduct testing and optimization to ensure correct function and display in the added browser.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Implement Multiple Language Support (Min. 3)
+                        </summary>
+                        <div>Implement support for a minimum of three languages. Provide a language switcher. Translate essential content. Ensure seamless navigation regardless of language. Allow users to set a default language.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Add Accessibility for Visually Impaired Users
+                        </summary>
+                        <div>Implement features like screen reader support, descriptive alt text for images, high-contrast color scheme, keyboard navigation/focus management, and text size adjustment options. Meet accessibility standards.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-minor">Minor</span> Integrate Server-Side Rendering (SSR)
+                        </summary>
+                        <div>Integrate SSR to improve loading speed and SEO. Ensure content is pre-rendered on the server. Maintain a consistent user experience.</div>
+                    </details>
+                 </div>
+
+                <h3 class="text-xl font-semibold">I. Server-Side Pong</h3>
+                 <div class="space-y-2">
+                    <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Implement Server-Side Pong & API
+                        </summary>
+                        <div>Develop server-side logic for Pong (gameplay, movement, scoring, interactions). Create an API with endpoints for game interaction (initialization, controls, state updates) accessible via CLI and web. Integrate with the web application.</div>
+                    </details>
+                     <details>
+                        <summary>
+                            <span class="badge badge-major">Major</span> Enable CLI vs. Web Pong Gameplay via API
+                        </summary>
+                        <div>Develop a CLI application for playing Pong. Use the API (from the previous module - strongly recommended) to connect the CLI to the web application, allowing CLI users to play against web users. Implement CLI authentication and real-time synchronization. Provide documentation.</div>
+                    </details>
+                 </div>
+            </section>
+
+            <section id="bonus" class="bg-yellow-50 border border-yellow-200">
+                <h2 class="text-2xl font-semibold mb-4 text-yellow-800">III. Bonus Part</h2>
+                <ul class="list-disc pl-5 mb-4 text-yellow-700">
+                    <li>Bonus points awarded for additional modules beyond the required 7 Major ones.</li>
+                    <li>5 points per extra Minor Module.</li>
+                    <li>10 points per extra Major Module.</li>
+                    <li><strong>Crucially:</strong> The bonus part is only assessed if the <strong>Mandatory Part is PERFECT</strong>.</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="text-center text-gray-500 text-sm mt-8">
+            Based on ft_transcendence subject document v16.0
+        </footer>
+
+    </div>
+
+</body>
+</html>
