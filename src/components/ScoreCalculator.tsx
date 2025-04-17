@@ -31,7 +31,7 @@ const ScoreCalculator: React.FC<ScoreCalculatorProps> = ({ selectedModules }) =>
 
     // Calculate percentage
     const bonusPercentage = (totalScore - 7) * 10;
-    const percentage = totalScore < 7 ? 0 : 100 + bonusPercentage;
+    const percentage = totalScore < 7 ? 0 :  100 + (bonusPercentage > 25 ? 25 : bonusPercentage);
 
     return (
         <div className="mb-4 p-3 bg-white rounded-lg shadow sticky top-0 z-10 grid grid-cols-2 gap-4 items-center">
