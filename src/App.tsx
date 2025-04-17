@@ -119,16 +119,25 @@ function App() {
                       <p className="text-sm font-medium">{module.title}</p>
                     </div>
                   </div>
-                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    selectedModules.includes(module.title)
-                      ? 'bg-blue-500 border-blue-500'
-                      : 'border-gray-300'
-                  }`}>
-                    {selectedModules.includes(module.title) && (
-                      <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    )}
+                  <div className="flex items-center gap-2">
+                    <a 
+                      href={`#module-${module.title.replace(/\s+/g, '-').toLowerCase()}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-xs text-blue-600 hover:text-blue-700 hover:underline"
+                    >
+                      Read more
+                    </a>
+                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                      selectedModules.includes(module.title)
+                        ? 'bg-blue-500 border-blue-500'
+                        : 'border-gray-300'
+                    }`}>
+                      {selectedModules.includes(module.title) && (
+                        <svg className="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
