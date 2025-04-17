@@ -56,6 +56,17 @@ const ScoreCalculator: React.FC<ScoreCalculatorProps> = ({ selectedModules }) =>
                     </div>
                 </div>
             </div>
+            <div className="col-span-2">
+                <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div 
+                        className="h-full transition-all duration-500"
+                        style={{ 
+                            width: `${Math.min((totalScore / 9.5) * 100, 100)}%`,
+                            backgroundColor: totalScore >= 7 ? '#22c55e' : '#ef4444'
+                        }}
+                    />
+                </div>
+            </div>
         </div>
     );
 };
