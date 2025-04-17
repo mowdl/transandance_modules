@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-6">
                 <a
-                    href="https://github.com/mowdl"
+                    href="https://github.com/mowdl/transandance_modules"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 transition-colors"
